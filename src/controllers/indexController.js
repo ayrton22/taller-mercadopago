@@ -18,7 +18,11 @@ module.exports = {
     console.log(req.query);
 
     if (req.query.status.includes("success")) {
-      return res.render("success");
+      return res.render("success", {
+        payment_type: req.query.payment_type,
+        external_reference: req.query.external_reference,
+        collection_id: req.query.collection_id,
+      });
     }
 
     if (req.query.status.includes("pending")) {
