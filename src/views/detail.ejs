@@ -47,9 +47,9 @@
               </ul>
 
               <div class="mercadopago-button-container">
-                <form action="/comprar" method="post">
+                <a href="<%= preference_init.init_point %>">
                   <button class="mercadopago-button">Pagar la compra</button>
-                </form>
+                </a>
               </div>
             </article>
           </div>
@@ -61,10 +61,6 @@
     <!-- footer -->
     <%- include('partials/footer') %>
     <!-- /footer -->
-    <script
-      src="https://www.mercadopago.com/v2/security.js"
-      view="item"
-    ></script>
-    "
+    <script src="https://www.mercadopago.com/v2/security.js"></script>
   </body>
 </html>

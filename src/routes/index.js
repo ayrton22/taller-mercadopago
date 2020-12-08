@@ -9,8 +9,6 @@ router.get("/", indexController.home);
 /* GET detail page */
 router.get("/detail", indexController.detail);
 
-router.post("/comprar", indexController.comprar);
-
 router.get("/callback", indexController.callback);
 
 router.post("/notifications", indexController.notifications);

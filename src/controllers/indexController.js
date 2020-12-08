@@ -10,9 +10,6 @@ module.exports = {
   home: (req, res) => {
     return res.render("index");
   },
-  detail: (req, res) => {
-    return res.render("detail", { ...req.query });
-  },
 
   callback: (req, res) => {
     console.log(req.query);
@@ -40,7 +37,7 @@ module.exports = {
     res.status(200).end("Ok");
   },
 
-  comprar: (req, res) => {
+  detail: (req, res) => {
     const host = "https://mercadopago-ayr.herokuapp.com/";
     const url = host + "callback?status=";
 
@@ -100,8 +97,8 @@ module.exports = {
     mercadopago.preferences
       .create(preference)
       .then((response) => {
-        global.init_point = response.body.init_point;
-        res.render("confirm");
+        preference_init = response.body;
+        res.render("detail", { ...req.query, preference_init });
       })
       .catch((error) => {
         console.log(error);
