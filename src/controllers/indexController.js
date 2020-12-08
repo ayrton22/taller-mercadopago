@@ -37,7 +37,7 @@ module.exports = {
   },
 
   comprar: (req, res) => {
-    const host = "http://localhost:400/";
+    const host = "https://mercadopago-ayr.herokuapp.com/";
     const url = host + "callback?status=";
 
     let preference = {
@@ -49,7 +49,7 @@ module.exports = {
 
       notification_url: host + "notifications",
 
-      autoreturn: "approved",
+      auto_return: "approved",
 
       payer: {
         name: "Ryan",
